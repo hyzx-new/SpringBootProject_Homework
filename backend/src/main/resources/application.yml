@@ -1,0 +1,37 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: student-answer-system
+  datasource:
+    url: jdbc:mysql://localhost:3306/student_answer_system?useUnicode=true&characterEncoding=utf8&serverTimezone=Asia/Shanghai&createDatabaseIfNotExist=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+      repositories:
+        enabled: false
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+app:
+  auth:
+    token-hours: 12
+  reminder:
+    days-before: 3
+  upload:
+    dir: E:/student-answer-system/uploads
